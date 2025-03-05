@@ -32,7 +32,7 @@ const Header = () => {
                   paddingHorizontal: 5,
                   borderRadius: 10,
                 }}>
-                5
+                3
               </Text>
             </View>
           </View>
