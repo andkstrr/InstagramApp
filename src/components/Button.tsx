@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({buttonTitle, onPress, disabled}) => {
         <View
           style={{
             width: 340,
-            borderRadius: 5,
+            borderRadius: 4,
             backgroundColor: disabled ? AppColor.DISABLE_BUTTON : AppColor.BUTTON,
           }}>
           <Text style={styles.buttonText}>{buttonTitle}</Text>

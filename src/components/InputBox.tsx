@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     },
     textInput: {
         width: 340,
-        padding: 8,
+        padding: 9,
         fontSize: 14,
         color: 'gray',
         borderWidth: 1,
-        borderRadius: 5,
+        borderRadius: 4,
         borderColor: 'gray',
         alignSelf: 'center',
     },
