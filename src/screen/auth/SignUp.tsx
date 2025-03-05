@@ -10,7 +10,8 @@ import { signUpInitialValue, signUpValidation } from './utils'
 const SignUp = () => {
   const navigation = useNavigation()
   const handleSignUp = () => {
-    console.log('hello');
+    console.log('success signup');
+    navigation.navigate('Home')
   };
   return (
     <View style={styles.signupContainer}>

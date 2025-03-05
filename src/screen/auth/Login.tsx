@@ -10,7 +10,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 const Login = () => {
   const navigation = useNavigation()
   const handleLogin = () => {
-    console.log('success')
+    console.log('success login')
     navigation.navigate('Home')
   };
   return (

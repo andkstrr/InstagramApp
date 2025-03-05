@@ -14,7 +14,7 @@ const Header = () => {
       }}>
       <View>
         <Image
-          style={{height: 28, width: 110}}
+          style={{height: 30, width: 110}}
           source={require('../assets/Instagram.png')}
         />
       </View>
