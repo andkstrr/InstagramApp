@@ -12,7 +12,7 @@ const Login = () => {
   return (
     <View style={styles.loginContainer}>
       <View style={styles.logoContainer}>
-        <Image style={{alignSelf: 'center', marginBottom: 20}}  source={require('../../assets/Instagram.png')} />
+        <Image style={{alignSelf: 'center', marginBottom: 70}}  source={require('../../assets/Instagram.png')} />
         <Formik
           initialValues={loginInitialValue}
           validationSchema={loginValidation}
@@ -52,9 +52,10 @@ const Login = () => {
             );
           }}
         </Formik>
+        <Text style={styles.forgotContainer}>Forgot Password?</Text>
       </View>
       <View style={styles.signContainer}>
-        <Text style={{color: 'gray'}}>Sign Up</Text>
+        <Text style={{color: 'gray'}}>Create New Account</Text>
       </View>
     </View>
   );
@@ -70,6 +71,11 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 0.9,
     justifyContent: 'center',
+  },
+  forgotContainer: {
+    color: 'gray',
+    paddingTop: 20,
+    textAlign: 'center',
   },
   signContainer: {
     flex: 0.2,
