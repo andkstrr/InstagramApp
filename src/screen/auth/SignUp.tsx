@@ -1,12 +1,14 @@
 import React from 'react'
 import {Formik} from 'formik'
-import InputBox from '../../components/InputBox'
 import Button from '../../components/Button'
-import {StyleSheet, Text, View, Image} from 'react-native'
-import {signUpInitialValue, signUpValidation} from './utils'
 import { AppColor } from '../../utils/AppColor'
+import InputBox from '../../components/InputBox'
+import { useNavigation } from '@react-navigation/native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { signUpInitialValue, signUpValidation } from './utils'
 
 const SignUp = () => {
+  const navigation = useNavigation()
   const handleSignUp = () => {
     console.log('hello');
   };
@@ -48,7 +50,9 @@ const SignUp = () => {
         </Formik>
       </View>
       <View style={styles.signContainer}>
-        <Text style={{color: 'gray'}}>Already have an account? <Text style={{color: AppColor.BUTTON}}>Log in</Text></Text>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
+          <Text style={{color: 'gray'}}>Already have an account? <Text style={{color: AppColor.BUTTON}}>Login</Text></Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

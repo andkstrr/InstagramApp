@@ -2,10 +2,13 @@ import React from 'react'
 import {Formik} from 'formik'
 import InputBox from '../../components/InputBox'
 import Button from '../../components/Button'
-import {StyleSheet, Text, View, Image} from 'react-native'
-import {loginInitialValue, loginValidation} from './utils'
+import { AppColor } from '../../utils/AppColor'
+import { useNavigation } from '@react-navigation/native'
+import { loginInitialValue, loginValidation } from './utils'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
 const Login = () => {
+  const navigation = useNavigation()
   const handleLogin = () => {
     console.log('hello');
   };
@@ -33,8 +36,8 @@ const Login = () => {
                   onChangeText={handleChange('username')}
                   onBlur={handleBlur('username')}
                   value={values.username}
-                  touched={touched.username}
                   errors={errors.username}
+                  touched={touched.username}
                   keyboardType={'default'}
                 />
                 <InputBox
@@ -55,7 +58,9 @@ const Login = () => {
         <Text style={styles.forgotContainer}>Forgot Password?</Text>
       </View>
       <View style={styles.signContainer}>
-        <Text style={{color: 'gray'}}>Create New Account</Text>
+        <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+          <Text style={{color: 'gray'}}>Don't have an account? <Text style={{color: AppColor.BUTTON}}>Login</Text></Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -1,16 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import Login from './src/screen/auth/Login'
-import SignUp from './src/screen/auth/SignUp'
-import InputBox from './src/components/InputBox'
-import Button from './src/components/Button'
+import StackNavigation from './src/navigator/StackNavigation'
+import { StyleSheet, Text, View, StatusBar } from 'react-native'
 
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'}  />
-      <Login />
-      {/* <SignUp /> */}
+      <StackNavigation />
     </View>
   )
 }
