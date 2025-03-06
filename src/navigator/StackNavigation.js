@@ -1,8 +1,8 @@
 import React from 'react'
-import {View, Text} from 'react-native'
 import Login from '../screen/auth/Login'
 import SignUp from '../screen/auth/SignUp'
-import Header from '../components/Header'
+import ViewStory from '../components/ViewStory'
+import Dashboard from '../screen/dashboard/Dashboard'
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
@@ -14,10 +14,14 @@ const StackNavigation = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="Home" component={Header} />
+        <Stack.Screen name="Home" component={Dashboard} />
+        <Stack.Screen name="Story" component={ViewStory} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default StackNavigation
+
+// name = href
+// component = halaman yang dituju

@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header'
+import Stories from '../../components/Stories'
 import { StyleSheet, Text, View } from 'react-native'
 
 const Dashboard = () => {
   return (
     <View>
       <Header />
+      <Stories />
     </View>
   )
 }

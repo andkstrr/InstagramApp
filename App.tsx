@@ -1,14 +1,14 @@
 import React from 'react'
 import Login from './src/screen/auth/Login'
 import StackNavigation from './src/navigator/StackNavigation'
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native'
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={'dark-content'}  />
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'gray'} translucent={false} />
       <StackNavigation />
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -17,7 +17,6 @@ export default App
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
-    backgroundColor: '#fff',
+    marginTop: StatusBar.currentHeight,
   }
 })

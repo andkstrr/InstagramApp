@@ -9,8 +9,7 @@ const Header = () => {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        height: 50,
-        backgroundColor: 'white'
+        height: 50
       }}>
       <View>
         <Image
@@ -28,7 +27,6 @@ const Header = () => {
             <View style={{position: 'absolute', bottom: 12, left: 13}}>
               <Text
                 style={{
-                  backgroundColor: 'red',
                   paddingHorizontal: 5,
                   borderRadius: 10,
                 }}>
