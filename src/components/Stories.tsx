@@ -18,7 +18,7 @@ const Stories = () => {
                     <Image source={item.profile} style={styles.storyImageProfile}></Image>
                 </View>
               </TouchableOpacity>
-              <Text style={styles.storyUserName}>{item.name}</Text>
+              <Text style={styles.storyUserName}>{item.username}</Text>
             </View>
         )
       })}
