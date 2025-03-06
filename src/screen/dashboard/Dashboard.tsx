@@ -1,17 +1,18 @@
 import React from 'react'
+import Post from '../../components/Post'
 import Header from '../../components/Header'
 import Stories from '../../components/Stories'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
 const Dashboard = () => {
   return (
-    <View>
-      <Header />
-      <Stories />
-      <View style={{justifyContent: 'flex-end', flex: 1}}>
-        
+    <ScrollView>
+      <View>
+        <Header />
+        <Stories />
+        <Post />
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

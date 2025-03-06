@@ -1,30 +1,27 @@
 import React from 'react'
 import Login from '../screen/auth/Login'
 import SignUp from '../screen/auth/SignUp'
-import { SafeAreaView } from 'react-native'
 import ViewStory from '../components/ViewStory'
 import BottomNavigation from './BottomNavigation'
 import Dashboard from '../screen/dashboard/Dashboard'
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
   return (
-    <SafeAreaView>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="Home" component={Dashboard} />
-          <Stack.Screen name="Story" component={ViewStory} />
-          <Stack.Screen name="Dashboard" component={BottomNavigation} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
-  );
-};
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Home" component={Dashboard} />
+        <Stack.Screen name="Story" component={ViewStory} />
+        <Stack.Screen name="Dashboard" component={BottomNavigation} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
 
 export default StackNavigation
 
