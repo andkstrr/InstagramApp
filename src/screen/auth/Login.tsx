@@ -11,7 +11,7 @@ const Login = () => {
   const navigation = useNavigation()
   const handleLogin = () => {
     console.log('success login')
-    navigation.navigate('Home')
+    navigation.navigate('Dashboard')
   };
   return (
     <View style={styles.loginContainer}>

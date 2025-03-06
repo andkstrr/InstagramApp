@@ -8,6 +8,9 @@ const Dashboard = () => {
     <View>
       <Header />
       <Stories />
+      <View style={{justifyContent: 'flex-end', flex: 1}}>
+        
+      </View>
     </View>
   )
 }
