@@ -58,7 +58,7 @@ const ViewStory = ({route}) => {
         {/* HEADER STORY */}
         <View style={styles.storyHeader}>
             <Image source={selectedItem.profile} style={styles.storyProfileUser} />
-            <Text style={styles.username}>{selectedItem.name}</Text>
+            <Text style={styles.username}>{selectedItem.username}</Text>
             <Text style={styles.storyTime}>{storyTime} hr</Text>
         </View>
 

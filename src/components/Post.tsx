@@ -5,7 +5,15 @@ import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'rea
 const Post = () => {
   const screenHeight = Dimensions.get('window').height // untuk mendapatkan tinggi layar
   const screenWidth = Dimensions.get('window').width // untuk mendapatkan lebar layar
-  
+  const formatDate = (dateString) => {
+    const [day, month, year] = dateString.split('/') // pecah format 
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+    ]
+    return `${parseInt(day)} ${monthNames[parseInt(month) - 1]}`
+  }
+
 
   return (
     <View>
@@ -56,6 +64,10 @@ const Post = () => {
                     </Text>
                     <Text>{item.post.caption}</Text>
                 </View>
+                <Text
+                    style={styles.date}>
+                    {formatDate(item.post.date)}
+                </Text>
             </View>
         )
        })}
@@ -103,5 +115,11 @@ const styles = StyleSheet.create({
     account: {
         fontSize: 15, 
         fontWeight: '600'
+    },
+    date: {
+        paddingHorizontal: 20,
+        marginTop: 10,
+        color: 'gray',
+        fontSize: 12
     }
 })
