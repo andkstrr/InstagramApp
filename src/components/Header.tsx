@@ -29,6 +29,8 @@ const Header = () => {
                 style={{
                   paddingHorizontal: 5,
                   borderRadius: 10,
+                  backgroundColor: 'red',
+                  color: 'white',
                 }}>
                 3
               </Text>
