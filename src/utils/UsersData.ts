@@ -32,7 +32,7 @@ export const UsersData = [
       date: '12/03/2025',
       image: require('../assets/data/wikramapost.png'),
       caption: 'Tentukan masa depanmu disini!',
-      like: 137,
+      like: 196,
     }
   },
   {
@@ -66,7 +66,7 @@ export const UsersData = [
       date: '8/03/2025',
       image: require('../assets/data/aswadpost.png'),
       caption: 'Stay tuned, ini bakal ngebantu kamu yang lagi hustle cari kerja!!',
-      like: 137,
+      like: 225,
     }
   },
   {
@@ -83,7 +83,7 @@ export const UsersData = [
       date: '12/03/2025',
       image: require('../assets/data/baitullahpost.png'),
       caption: 'Hal-hal unik pas pertama kali umroh!',
-      like: 137,
+      like: 467,
     }
   },
   {
@@ -100,7 +100,7 @@ export const UsersData = [
       date: '8/03/2025',
       image: require('../assets/data/sandhikapost.png'),
       caption: 'wahh keren banget nih!',
-      like: 137,
+      like: 874,
     }
   },
   // {
