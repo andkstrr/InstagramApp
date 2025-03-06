@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     progressBar: {
         height: '100%',
-        backgroundColor: 'gray', // Warna garis yang berkurang
+        backgroundColor: 'gray',
     },
     storyHeader: {
         flexDirection: 'row',
