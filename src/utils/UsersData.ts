@@ -99,7 +99,7 @@ export const UsersData = [
       time: '13.15.00',
       date: '8/03/2025',
       image: require('../assets/data/sandhikapost.png'),
-      caption: 'wahh keren banget nih!',
+      caption: 'OTW Murojaah React JS!',
       like: 874,
     }
   },
