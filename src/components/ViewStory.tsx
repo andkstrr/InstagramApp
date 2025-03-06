@@ -1,6 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, View, Text, Image, Dimensions, TextInput, TouchableOpacity } from 'react-native'
+import { 
+    StyleSheet, 
+    View, 
+    Text, 
+    Image, 
+    Dimensions, 
+    TextInput, 
+    TouchableOpacity, 
+    Animated } from 'react-native'
 
 // ambil id sesuai story yang di click
 const ViewStory = ({route}) => {
@@ -12,22 +20,49 @@ const ViewStory = ({route}) => {
   const screenHeight = Dimensions.get('window').height // untuk mendapatkan tinggi layar
   const screenWidth = Dimensions.get('window').width // untuk mendapatkan lebar layar
 
+  // animasi progress bar timeout
+  const progressAnim = useRef(new Animated.Value(0)).current
+
   // timeout akses story
   useEffect(() => {
+    // animasi progress bar timeout (3s)
+    Animated.timing(progressAnim, {
+        toValue: screenWidth, // animasi bergerak ke kanan
+        duration: 5000,
+        useNativeDriver: false,
+    }).start()
+
+    // timeout menutup story
     const timeout = setTimeout(() => {
       navigation.goBack()
-    }, 3000)
+    }, 5000)
 
-    return () => clearTimeout(timeout); // Bersihkan timeout saat komponen di-unmount
-  }, [navigation]); // dependency agar aman
+    return () => {
+        clearTimeout(timeout)
+        progressAnim.setValue(screenWidth)
+      };
+  }, [navigation]) // dependency
 
   return (
     <View style={{flex: 1, backgroundColor: '#0f0f0f'}}>
+        {/* PROGRESS BAR */}
+        <View style={styles.progressBarContainer}>
+            <Animated.View
+            style={[
+                styles.progressBar,
+                { width: progressAnim }, 
+            ]}
+            />
+        </View>
+        
+        {/* HEADER STORY */}
         <View style={styles.storyHeader}>
             <Image source={selectedItem.profile} style={styles.storyProfileUser} />
             <Text style={styles.username}>{selectedItem.name}</Text>
             <Text style={styles.storyTime}>{storyTime} hr</Text>
         </View>
+
+        {/* CONTENT STORY */}
         <View style={styles.storyContent}>
             <Image 
                 source={selectedItem.story.image} 
@@ -40,6 +75,8 @@ const ViewStory = ({route}) => {
                     borderBottomLeftRadius: 20,
                 }} 
             />
+
+            {/* REPLY */}
             <View style={styles.storyMessage}>
                 <TextInput 
                     placeholder='Reply Story' 
@@ -67,6 +104,19 @@ const ViewStory = ({route}) => {
 export default ViewStory
 
 const styles = StyleSheet.create({
+    progressBarContainer: {
+        height: 4,
+        width: '100%',
+        backgroundColor: '#333',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 10, 
+    },
+    progressBar: {
+        height: '100%',
+        backgroundColor: 'gray', // Warna garis yang berkurang
+    },
     storyHeader: {
         flexDirection: 'row',
         alignItems: 'center',
