@@ -121,3 +121,8 @@ export const UsersData = [
   //   }
   // }
 ];
+
+export const typeData = [
+  {id: 1, image: require('../assets/icon/GridIcon.png')},
+  {id: 2, image: require('../assets/icon/TagsIcon.png')},
+];
